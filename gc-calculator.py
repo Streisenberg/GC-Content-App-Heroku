@@ -1,6 +1,4 @@
 import streamlit as st 
-import os
-from Bio import SeqIO
 import pandas as pd 
 import matplotlib.pyplot as plt
 

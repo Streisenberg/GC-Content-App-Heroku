@@ -54,10 +54,10 @@ def gc_content(gene):
                 if char == "t":
                     t += 1
 
-        st.write("G Sayısı: " + str(g))
-        st.write("C Sayısı: " + str(c))
-        st.write("A Sayısı: " + str(a))
-        st.write("T Sayısı: " + str(t))
+        st.write("The number of **Guanin**: " + str(g))
+        st.write("The number of **Cytosin**: " + str(c))
+        st.write("The number of **Adenin**: " + str(a))
+        st.write("The number of **Timin**: " + str(t))
 
         g_content = g
         c_content = c
@@ -67,17 +67,19 @@ def gc_content(gene):
 
         gc = (g+c+0.)/(a+g+t+c+0.)
 
-        st.write("GC content: " + str(gc))
+        st.write("**GC content**: " + str(gc))
 
         
-        nucleotides = ["Guanin", "Citosin", "Adenin", "Timin"]
+        nucleotides = ["Guanin", "Cytosin", "Adenin", "Timin"]
         numbers = [g_content, c_content, a_content, t_content]
 
         df = pd.DataFrame(numbers, index=nucleotides)
         plt.bar(nucleotides, numbers, label="Nucleotides", width=.2)
 
         st.pyplot()
-        st.write(df)
+        if st.checkbox('Show the table'):
+            st.subheader('Table')
+            st.write(df)
     except FileNotFoundError:
         st.error("Please give the path of your data")
     

@@ -13,10 +13,9 @@ This app calculate the guanin-citosin content in given data
 
 
 
-st.sidebar.header("File Input")
 
 
-uploaded_file = st.file_uploader("asjhg", type=["csv","fasta"])
+uploaded_file = st.sidebar.file_uploader("asjhg", type=["csv","fasta"])
 
 
 
@@ -32,7 +31,7 @@ except FileNotFoundError:
 gene = uploaded_file
 
 def gc_content(gene):
-    print("asffa")
+    
 
     try:
 

@@ -16,11 +16,13 @@ This app calculate the guanin-citosin content in given data
 st.sidebar.header("File Input")
 
 
-uploaded_file = st.sidebar.text_input("Enter the file path: ", "sequence.fasta")
+uploaded_file = st.file_uploader("asjhg", type=["csv","fasta"])
+
+
 
 
 try:
-    with open(uploaded_file) as input:
+    with open(str(uploaded_file)) as input:
         if st.checkbox('Show the genome'):
             st.subheader('Genome')
             st.text(input.read())
@@ -30,10 +32,11 @@ except FileNotFoundError:
 gene = uploaded_file
 
 def gc_content(gene):
+    print("asffa")
 
     try:
 
-        gene = open(uploaded_file, 'r')
+        gene = open(str(uploaded_file), 'r')
 
         gene.readline()
 

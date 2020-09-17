@@ -32,7 +32,7 @@ except FileNotFoundError:
 gene = uploaded_file
 
 def gc_content(gene):
-    print("asffa")
+    
 
     try:
 
